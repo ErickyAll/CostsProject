@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 
 function App() {
   return (
+    // updates futuros virão nesta branch
     <Router>
       <Navbar />
       <Container customClass="min-height">
