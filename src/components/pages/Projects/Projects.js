@@ -5,8 +5,10 @@ import Container from '../../layout/Container/Container'
 import LinkButton from '../../layout/LinkButton/LinkButton'
 import { useState, useEffect } from 'react'
 import ProjectCard from '../../project/ProjectCard/ProjectCard'
+import Loading from '../../layout/Loading/Loading'
 
 export default function Projects() {
+  const [remLoad, setRemLoad] = useState(false)
   const [projects, setProjects] = useState([])
 
   const location = useLocation()
@@ -16,18 +18,21 @@ export default function Projects() {
   }
 
   useEffect(() => {
-    fetch('http://localhost:5000/projects', {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json'
-      }
-    })
-      .then(resp => resp.json())
-      .then(data => {
-        console.log(data)
-        setProjects(data)
+    setTimeout(() => {
+      fetch('http://localhost:5000/projects', {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json'
+        }
       })
-      .catch(err => console.log(err))
+        .then(resp => resp.json())
+        .then(data => {
+          console.log(data)
+          setProjects(data)
+          setRemLoad(true)
+        })
+        .catch(err => console.log(err))
+    }, 300)
   }, [])
 
   return (
@@ -48,6 +53,8 @@ export default function Projects() {
               key={project.id}
             />
           ))}
+        {!remLoad && <Loading />}
+        {remLoad && projects.length === 0 && <p>Não há projetos cadastrados</p>}
       </Container>
     </div>
   )
