@@ -1,50 +1,6 @@
 {
   "projects": [
     {
-      "name": "ProductOwner",
-      "budget": "700",
-      "category": {
-        "id": "1",
-        "name": "infra"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 1
-    },
-    {
-      "name": "ProductOwner",
-      "budget": "55555",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "eeee",
-      "budget": "5555",
-      "category": {
-        "id": "2",
-        "name": "Development"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 3
-    },
-    {
-      "name": "eeee",
-      "budget": "5555",
-      "category": {
-        "id": "2",
-        "name": "Development"
-      },
-      "cost": 0,
-      "services": [],
-      "id": 4
-    },
-    {
       "name": "Gaminn",
       "budget": "3000",
       "category": {
@@ -54,6 +10,17 @@
       "cost": 0,
       "services": [],
       "id": 5
+    },
+    {
+      "name": "testando",
+      "budget": "30",
+      "category": {
+        "id": "3",
+        "name": "Design"
+      },
+      "cost": 0,
+      "services": [],
+      "id": 6
     }
   ],
   "categories": [

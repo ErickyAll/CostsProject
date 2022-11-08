@@ -8,6 +8,11 @@ export default function ProjectCard({
   category,
   handleRemove
 }) {
+  const remove = e => {
+    e.preventDefault()
+    handleRemove(id)
+  }
+
   return (
     <div className="project_card">
       <h4>{name}</h4>
@@ -20,10 +25,10 @@ export default function ProjectCard({
         <span className={category.toLowerCase()}></span> {category}
       </p>
       <div className="project_card_actions">
-        <Link to="/">
+        <Link to={`/project/${id}`}>
           <BsPencil /> Edit
         </Link>
-        <button>
+        <button onClick={remove}>
           <BsFillTrashFill /> Remove
         </button>
       </div>
